@@ -1,0 +1,39 @@
+<table  style="background-color:rgb(247, 225, 225);">
+   
+    <tr>
+        <td> Enter  Item Name </td>
+        <td> <input type="text" #itemName/> </td>
+    </tr>
+    <tr>
+        <td> cost </td>
+        <td> <input type="number" #cost/> </td>
+    </tr>
+    <tr>
+        <td>category</td>
+        <td> 
+            <select #category>
+                <option> Pure veg </option>
+                <option> Non Veg </option>
+                
+            </select>
+        </td>
+    </tr>
+     <tr>
+        <td> Image Name </td>
+        <td> <input type="text" #imageName/> </td>
+    </tr>
+    <tr>
+        <td> <input type="reset" value="Clear All"></td>
+        <td> <input type="button" (click)="readItems( 
+            itemName.value,
+            category.value,
+            cost.value,
+            imageName.value)"
+        
+            value="Add Item" /> </td>
+    </tr>
+
+
+</table>
+<br/>
+
