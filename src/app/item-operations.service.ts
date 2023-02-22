@@ -6,6 +6,9 @@ import { Item } from './item';
   providedIn: 'root'
 })
 export class ItemOperationsService {
+  baseURL:string = 'http://localhost:2023';
+  submitItemEndPoint:string=this.baseURL+'/items';
+  ItemByRestaurantIdEndPoint:string=this.baseURL+'/items/by';
 
   constructor() { }
   
@@ -22,6 +25,38 @@ export class ItemOperationsService {
   {
     return this.itemArr;
   }
+
+  getItemByCategory(filterCategory:string):Item[]
+  {
+    // localhost:8080/api/course/{category}
+   let outputArr:Item[] = [];
+
+    this.itemArr.forEach(i=>{
+      if(i.category == filterCategory)
+      {
+        outputArr.push(i);
+      }
+    });
+
+    return outputArr;
+  }
+
+  getItemByitemName(filterName:string):Item[]
+  {
+    // localhost:8080/api/course/{category}
+   let outputArr:Item[] = [];
+
+    this.itemArr.forEach(i=>{
+      if(i.itemName == filterName)
+      {
+        outputArr.push(i);
+      }
+    });
+
+    return outputArr;
+  }
+
+  
 }
 
  

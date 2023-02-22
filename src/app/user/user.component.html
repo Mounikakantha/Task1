@@ -1,3 +1,32 @@
+<td>
+    Item by
+    Category
+
+        <select #category (change)="getFilterData(category.value)">
+            <option> Pure Veg </option>
+            <option> Non Veg </option>
+        </select>
+
+
+</td><br>
+<td>
+    Item by itemName
+    
+
+        <select #itemName (change)="getFilteritemName(itemName.value)">
+            <option> biryani </option>
+            <option> samosa </option>
+            <option> chicken </option>
+            <option> roti </option>
+            <option> fish </option>
+        </select>
+
+
+</td>
+
+
+
+
 <div *ngFor="let i of allItems" style="background-color:rgb(244, 166, 138);">
     <table>
         <tr>
@@ -5,13 +34,16 @@
             </td>
             <td>
                 <h2>{{i.itemName}} </h2>
-                <hr />
+                <hr/>
                 <p> {{i.category}} </p>
                 <br>
                 <h4>{{i.cost}}</h4>
                 
             </td>
-        </tr>
+        </tr>  
+            
+        
         <hr>
     </table>
+    
 </div>

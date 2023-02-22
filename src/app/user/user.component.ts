@@ -22,4 +22,17 @@ export class UserComponent {
     this.router=router;
   }
 
+  getFilterData(filterValue:string)
+  {
+    console.log(" Filter Value "+filterValue);
+
+    this.allItems = this.__itemService.getItemByCategory(filterValue);
+  }
+  getFilteritemName(filterValue:string)
+  {
+    console.log(" Filter Value "+filterValue);
+
+    this.allItems = this.__itemService.getItemByitemName(filterValue);
+  }
+
 }
